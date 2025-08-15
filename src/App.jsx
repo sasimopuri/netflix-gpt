@@ -1,8 +1,13 @@
-function App(){
-  return(
+import Body from "./components/Body";
+import Header from "./components/Header";
+import Login from "./components/Login";
+
+function App() {
+  return (
     <>
-      <h1 className="text-blue-600 ">Hello</h1>
+      <Header />
+      <Body />
     </>
-  )
+  );
 }
-export default App
+export default App;
