@@ -1,7 +1,13 @@
-import React from "react";
+import MainComponent from "./MainComponent";
+import useFetchNowPlayingMovies from "../Hooks/useFetchNowPlayingMovies";
 
 const Browse = () => {
-  return <div>Browse</div>;
+  useFetchNowPlayingMovies();
+  return (
+    <div>
+      <MainComponent />
+    </div>
+  );
 };
 
 export default Browse;
