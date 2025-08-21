@@ -11,6 +11,7 @@ const MainComponent = () => {
     <div className="pt-[30%] bg-black md:pt-0">
       <VideoTitle title={movie.title} overview={movie.overview} />
       <VideoComponent />
+      
     </div>
   );
 };
