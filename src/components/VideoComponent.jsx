@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import useFetchVideoDetails from "../Hooks/useFetchVideoDetails";
 
-const VideoComponent = () => {
+const VideoComponent = ({ movieId }) => {
+  useFetchVideoDetails(movieId);
   const movieVideoDetails = useSelector((state) => state.movies?.videoDetails);
 
-  useFetchVideoDetails();
   if (!movieVideoDetails) return;
   let trailers = movieVideoDetails?.results.filter(
     (result) => result.type === "Trailer"
