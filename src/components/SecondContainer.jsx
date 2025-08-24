@@ -11,8 +11,11 @@ const SecondContainer = () => {
 
   return (
     <div className="text-white">
-      <MoviesList title="Now Playing Movies" movies={nowPlayingMovies} />
-      <MoviesList title="Trending Movies" movies={trendingMovies} />
+      <div className="text-xl font-bold">Now Playing Movies</div>
+      <MoviesList movies={nowPlayingMovies} />
+      <div className="text-xl font-bold">Trending Movies</div>
+      <MoviesList title="" movies={trendingMovies} />
+      <div className="text-xl font-bold">Popular Movies</div>
       <MoviesList title="Popular Movies" movies={popularMovies} />
     </div>
   );
