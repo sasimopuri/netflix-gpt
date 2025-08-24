@@ -5,3 +5,5 @@ export const TMDB_API_OPTIONS ={
     Authorization: "Bearer " +import.meta.env.VITE_TMDB_KEY,
   },
 };
+
+export const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY
