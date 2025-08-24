@@ -2,7 +2,6 @@ export const ValidateForm = (...args) => {
   let name, email, password;
   if (args.length === 3) {
     [name, email, password] = args;
-    console.log("inside validate", name, email, password);
   } else {
     [email, password] = args;
   }

@@ -4,8 +4,6 @@ import { useDispatch } from "react-redux";
 import { addPopularMovies, addTrendindMovies } from "../utils/moviesSlice";
 
 const useFetchPopularMovies = () => {
-    console.log("insideeqw");
-    
   const dispatch = useDispatch();
   const fetchPopularMovies = async () => {
     let response = await fetch(
