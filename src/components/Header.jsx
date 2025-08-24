@@ -41,7 +41,7 @@ const Header = () => {
           <div className="flex gap-4">
             <div
               className="h-10 p-2 rounded-lg text-white bg-[#E50914] text-sm cursor-pointer"
-              onClick={handleSignOut}
+              onClick={()=>navigate("/gptSearch")}
             >
               GPT Search
             </div>

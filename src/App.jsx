@@ -4,6 +4,7 @@ import appStore from "./utils/appStore";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Browse from "./components/Browse";
 import Layout from "./components/Layout";
+import GptSearch from "./components/GptSearch";
 function App() {
   const appRouter = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ function App() {
         {
           path: "/browse",
           element: <Browse />,
+        },
+        {
+          path: "/gptSearch",
+          element: <GptSearch />,
         },
       ],
     },
