@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state)=>state?.user)
+  const [showGPTSeatch, setShowGPTSearch] = useState(true);
+  const user = useSelector((state) => state?.user);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
@@ -29,6 +30,11 @@ const Header = () => {
       .catch((error) => {});
   };
 
+  const handleToggler = () => {
+    setShowGPTSearch((prevState) => !prevState);
+    showGPTSeatch ? navigate("/gptSearch") : navigate("/browse");
+  };
+
   return (
     <>
       <div className="absolute py-2 px-10 bg-gradient-to-b w-screen from-black z-10 flex justify-between">
@@ -41,9 +47,9 @@ const Header = () => {
           <div className="flex gap-4">
             <div
               className="h-10 p-2 rounded-lg text-white bg-[#E50914] text-sm cursor-pointer"
-              onClick={()=>navigate("/gptSearch")}
+              onClick={handleToggler}
             >
-              GPT Search
+              {showGPTSeatch ? "GPT Search" : "Home"}
             </div>
             <div
               className="h-10 p-2  rounded-lg text-white bg-[#E50914] text-sm cursor-pointer"
